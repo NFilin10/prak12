@@ -118,7 +118,7 @@ async function handleFormSubmit(event) {
 
 async function listiraamatud() {
     try {
-        const responseData = await getDataAsJson("http://localhost:5000/raamatud/");
+        const responseData = await getDataAsJson("https://filinbackend-hqgkhddrgea9baaw.northeurope-01.azurewebsites.net/raamatud/");
 
         const resultElement = document.getElementById("raamatud_result");
 
@@ -127,8 +127,8 @@ async function listiraamatud() {
         for (var raamat of responseData.raamatud) {
             let failinimi = raamat.split('.')[0];
             resultElement.innerHTML +=
-                '<a href="http://localhost:5000/raamatud/' + raamat + '" download="' + failinimi + '.txt">' + failinimi + '.txt</a> ' +
-                '<a href="#" onclick="deleteObject(\'http://localhost:5000/raamatud/' + raamat + '\').then(listiraamatud)"> [kustuta]</a>' +
+                '<a href="https://filinbackend-hqgkhddrgea9baaw.northeurope-01.azurewebsites.net/raamatud/' + raamat + '" download="' + failinimi + '.txt">' + failinimi + '.txt</a> ' +
+                '<a href="#" onclick="deleteObject(\'https://filinbackend-hqgkhddrgea9baaw.northeurope-01.azurewebsites.net/raamatud/' + raamat + '\').then(listiraamatud)"> [kustuta]</a>' +
                 "<br />";
         }
 
